@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name= "viewport" content = "width=device-width initial-scale = 1.0" />
+    <title> Pomodoro App</title>
+    <link rel="stylesheet" href="new 1.css" />
+    <link id = "website-icon" rel = "icon" type="image/ico" href = "images/pomodoro-image">
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel = "stylesheet"  type = "text/css" href = "https://fonts.googleapis.com/css2?family=Raleway:wght@160">
+  </head>
+
+<body style = "background-color: white;">
+  <div class = "container">
+    <header>
+      <div id = "Title-box">
+        <div id = "title"> Pomodoro Timer</div>
+      </div>
+    </header>
+
+  
+
+    <div class = "Timer-content">
+      <p>
+        <div>
+          <span id = "timer"></span>
+        </div>
+
+        <button id = "start" class="buttons"> Start </button>
+        <button id = "pause" class="buttons"> Pause </button>
+        <button id = "reset" class="buttons"> Reset </button>
+
+      </p>
+
+      <p id = "select-buttons">
+        <button id = "pomodoro-button" class="buttons"> Pomodoro (25m)</button>
+        <button id = "pomodoro-break" class="buttons"> Short Break (5m)</button>
+        <button id = "pomodoro-long_break" class="buttons"> Long Break (15m)</button>
+      </p>
+
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <h3> How the Pomodoro Technique works:</h3>
+        <ol>
+          <li> Choose a task to work on</li>
+          <li> Work for 25 minutes without any interruptions.</li>
+          <li> Take a break for 5 minutes.</li>
+          <li> After every four 25-minute working sessions, take a 15 minute break.</li>
+        </ol>
+
+      </div>
+
+      <div class = "footer-container">
+        <h1> Alarm options:</h1>
+        <div id = "options">
+          <label for = "alarm_type" id = "alarm_label"> Alarm: </label> <br>
+          <select id = alarm_type>
+            <option value="None"> None </option>
+            <option value = "alarm_bell"> Bell </option>
+            <option value = "alarm_boops"> Boops </option>
+            <option value  = "alarm_beep"> Beep</option>
+          </select>
+          <br><br>
+          <label for = "volume" id = alarm_volume>Volume:</label> <br>
+          <input type="range" id = "volume" min = 0 max = 100 value = 30>
+        </div>
+      </div>
+
+      
+    </footer>
+
+  </div>
+
+
+  <audio id = "alarm_bell">
+    <source src= "one_bell.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id = "alarm_boops">
+    <source src = "audio_three_boops.mp3" type = "audio/mpeg">
+  </audio>
+
+  <audio id = "alarm_beep">
+    <source src = "audio_three_beeps.mp3" type="audio/mpeg">
+  </audio>
+
+  <script type="text/javascript" src="../resources/mousetrap.js"></script>
+  <script type="text/javascript" src="new 1.js"></script>
+
+
+</body>
+
+
+</html>
