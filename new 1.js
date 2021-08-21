@@ -40,7 +40,6 @@ function CountdownTimer(seconds, tickRate) {
 
                     // Alert user that time is up
                     playAlarm();
-                    changeFavicon('green');
                 }
                 
                 var timeRemaining = parseSeconds(secondsRemaining);
@@ -89,23 +88,6 @@ function parseSeconds(seconds) {
 /** Play the selected alarm at selected volume. */
 
 
-/** Change the color of the favicon. */
-function changeFavicon(color) {
-    document.head = document.head || document.getElementsByTagName('head')[0];
-    var color = color || 'green';
-
-    var newFavicon = document.createElement('link'),
-        oldFavicon = document.getElementById('dynamic-favicon');
-    newFavicon.id = 'dynamic-favicon'
-    newFavicon.type = 'image/ico';
-    newFavicon.rel = 'icon';
-    newFavicon.href = 'images/' + color + '_tomato.ico';
-
-    if (oldFavicon) {
-        document.head.removeChild(oldFavicon);
-    }
-    document.head.appendChild(newFavicon);
-}
 
 function playAlarm(){
     var alarmval = document.getElementById('alarm_type').value;
@@ -147,7 +129,6 @@ window.onload = function () {
     /** Revert the favicon to red, delete the old timer
         object, and start a new one. */
     function resetMainTimer(seconds) {
-        changeFavicon('red');
         timer.pause();
         timer = new CountdownTimer(seconds); 
         timer.onTick(setTimeOnAllDisplays);
@@ -190,19 +171,6 @@ window.onload = function () {
     document.getElementById('pomodoro-long_break').addEventListener(
         'click', function () {
             resetMainTimer(15*60);
-            timer.start();
-        });
-        
-    document.getElementById('btn_custom').addEventListener(
-        'click', function () {
-            customUnits = document.getElementById('custom_units').value
-            if (customUnits === 'minutes') {
-                resetMainTimer(customTimeInput.value*60);
-            } else if (customUnits === 'hours') {
-                resetMainTimer(customTimeInput.value*3600);
-            } else {
-                resetMainTimer(customTimeInput.value);
-            }
             timer.start();
         });
         
