@@ -40,6 +40,8 @@ h1{
 
   font-size: 7em;
   font-weight: bold;
+  color: darkblue;
+  font-family: initial;
 }
 
 button.buttons{
